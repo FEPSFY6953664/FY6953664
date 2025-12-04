@@ -82,7 +82,7 @@
    
    <h3 id="Abstract">Abstract</h3>
       <p class="ex1">
-         <pre>
+   <pre>
 This article explores how extreme pressure in the deep ocean affects the design and performance of manned submersible systems. 
 As pressure increases rapidly with depth, engineers must develop strong, stable hulls and reliable internal components to keep 
 the crew safe. The article explains how pressure influences structural integrity, material behaviour, and mechanical systems inside
@@ -93,7 +93,8 @@ under harsh and demanding conditions.
         </p>
    <h3 id="Introduction">Introduction</h3>
    <p class="ex1">
-      <pre>
+     <pre id="Introduction_InText">   
+         <pre>
 Manned deep-sea exploration pushes engineering to its limits, as submersibles must operate in an environment dominated by 
 extreme pressure and unforgiving conditions. Designing these vehicles requires a clear understanding of how materials and 
 structures behave under heavy compressive loads, and how pressure affects every mechanical system inside the hull.
@@ -103,6 +104,7 @@ to ensure structural integrity, reliability, and crew safety during dives to ext
    </p>
     <h3 id="The Impact Pressure has on the Hull">The Impact Pressure has on the Hull</h3>
    <p class="ex1">
+       <pre id="The Impact Pressure has on the Hull_InText">  
       <pre>
 Manned deep-sea exploration presents one of the most demanding engineering challenges due to 
 the extreme pressures encountered at great ocean depths.As depth increases, hydrostatic pressure 
@@ -136,6 +138,7 @@ instantaneously with well-known documentations, one being the OceanGate Submersi
    </p>
    <h3 id="Structural Challenges">Structural Challenges</h3>
    <p class="ex1">
+       <pre id="Structural Challenges_InText">  
       <pre>
 
          
@@ -234,5 +237,36 @@ and reliable for the crew,even after repeated deep dives. Without this attention
     window.onload = getLastUpdatedTime;
 </script>   
 
+
+
+<p id="totalWordCount"></p>
+<hr>
+<script>
+  // Function to calculate and display word count for a specified section
+  function displayWordCount(sectionId, outputId) {
+    // Get the text content from the specified section
+    const text = document.getElementById(sectionId).textContent;
+    // Split text into words based on spaces and filter out any empty strings
+    const wordArray = text.trim().split(/\s+/);
+    // Count the words
+    const wordCount = wordArray.length;
+    // Return the word count for summing purposes
+    return wordCount;
+  }
+  // Function to calculate and display total word count from selected sections
+  function displayTotalWordCount() {
+    // Calculate word count for each section and accumulate the total
+    const IntroductionCount = displayWordCount("Introduction_InText");
+    const AnalysisCount = displayWordCount("The Impact Pressure has on the Hull_InText");
+    const StructuralChallengesCount = displayWordCount ("Structural Challenges_InText")
+    // Calculate the sum of all selected sections
+    const totalWordCount = IntroductionCount + AnalysisCount + StructuralChallengesCount;
+    // Display the total word count
+    document.getElementById("totalWordCount").innerText = `Total word count: ${totalWordCount}`;
+  }
+  // Run the function for specific sections and display total count when the page loads
+  window.onload = displayTotalWordCount;
+</script>
+          
 
 </html>
