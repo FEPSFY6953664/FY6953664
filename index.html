@@ -144,12 +144,24 @@ instantaneously with well-known documentations, one being the OceanGate Submersi
       <pre>
 
 <style>
-
 .right-middle {
-    float: right;         
-    margin-left: 20px;     
-    margin-bottom: 20px;   
-    width: 315px;           
+    float: left;                 /* Move table to the left instead of right */
+    margin-right: 20px;          /* Space between table and text */
+    margin-bottom: 20px;
+    width: 340px;                /* Slightly wider so the table fits */
+    clear: both;                 /* Ensure it sits in the vacant space above */
+}
+
+/* Optional: make table layout cleaner */
+.right-middle table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.right-middle th, .right-middle td {
+    border: 1px solid #ccc;
+    padding: 6px 8px;
+    text-align: left;
 }
 </style>
 <div class="right-middle">
@@ -312,7 +324,7 @@ and reliable for the crew,even after repeated deep dives. Without this attention
     const wordCount = wordArray.length;
     
     return wordCount;
-  }h
+  }
   
   function displayTotalWordCount() {
    
@@ -329,7 +341,9 @@ and reliable for the crew,even after repeated deep dives. Without this attention
 </script>
 
 
-<video src="freecompress-The Impact and Effect of Pressure on manned deep sea exploration systems.mp4" width="800" height="490" controls>
+<video style="margin-top: 40px;"
+       src="freecompress-The Impact and Effect of Pressure on manned deep sea exploration systems.mp4" 
+       width="800" height="490" controls>
 </video>
 
 </html>
